@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function enterunits() {
+            let unit = units.value;
+        }
+
+        function billamount() {
+            unit = units.value * 10;
+            unitbill.value = unit;
+
+            //AC BILL
+            let ACunitinp = ACunit.value;
+            let acBill = ACunitinp * 10;
+            ACBill.value = acBill;
+            //FAN BILL
+            let fanunitinp = fanunit.value;
+            let FanBill = fanunitinp * 2;
+            Fanbill.value = FanBill;
+            //COOLER BILL
+            let Coolerunitinp = coolerunit.value;
+            let CoolerrBill = Coolerunitinp * 5;
+            CoolerBill.value = CoolerrBill;
+
+            //TOTAL BILL
+            let totalbill = unit + acBill + FanBill + CoolerrBill;
+            document.getElementById("totalbill").value = totalbill;
+
+
+
+
+        }
+
+        function billdis(txt) {
+            let disten = 0;
+
+            if (comdis.checked) {
+                disten = totalbill.value * 10 / 100;
+                disc.value = disten;
+            } else if (resdis.checked) {
+                disten = totalbill.value * 20 / 100;
+                disc.value = disten;
+            }
+
+            disc.value = disten;
+        }
+
+
+
+        function billnet() {
+            let netbill = totalbill.value - disc.value;
+            nettotall.value = netbill;
+        }
+
+        function enableAC() {
+            if (AC.checked == false) {
+                ACunit.disabled = true;
+            } else {
+                ACunit.disabled = false;
+            }
+        }
+
+
+        function enableFan() {
+            if (Fan.checked == false) {
+                fanunit.disabled = true;
+            } else {
+                fanunit.disabled = false;
+            }
+        }
+
+
+
+        function enableCooler() {
+            if (Cooler.checked == false) {
+                coolerunit.disabled = true;
+            } else {
+                coolerunit.disabled = false;
+            }
+        }
+
+
+    </script>
+</head>
+<style>
+    body {
+        margin-top: 5%;
+        background-color: skyblue;
+    }
+    h1{
+        color: white;
+    }
+    .inpt{
+        width: 200px;
+        height: 20px;
+        text-align: center;
+        font-weight: bold;
+        border: 1px blue solid;
+    }
+    .inpt2{
+        color:blue;
+        font-size: 16px;
+    }
+</style>
+
+<body>
+    <center>
+        <h1>Electricity Consumption Bill</h1>
+        <div style="width: 700px; background-color: aliceblue; height: 500px; padding-top: 30px;">
+
+            <div>Units Consumed: <input type="number" id="units" class="inpt" onclick="enterunits()"></div>
+
+            <br><br>
+
+
+            <div style="float: left; display: flex; justify-content: space-evenly; width: inherit;">
+                <div>
+                    <input type="checkbox" name="" id="AC" onclick="enableAC()">AC
+                    <br>
+                    <input type="text" name="" id="ACunit" class="inpt" disabled>
+                </div>
+                <div><input type="checkbox" name="" id="Fan" onclick="enableFan(fanunit)">Fan
+                    <br>
+                    <input type="text" name="" id="fanunit" class="inpt" disabled>
+                </div>
+                <div><input type="checkbox" name="" id="Cooler" onclick="enableCooler(coolerunit)">Cooler
+                    <br>
+                    <input type="text" name="" id="coolerunit" class="inpt" disabled>
+                </div>
+            </div>
+
+            <br><br>
+
+
+            <div style="display: flex; justify-content:center; width: inherit;">
+                <div><input type="radio" name="lss" id="comdis" value="com" onclick="billdis()">Commercial</div>
+                <div><input type="radio" name="lss" id="resdis" value="res" onclick="billdis()">Residental</div>
+            </div>
+
+            <br><br>
+
+            <div>
+                <input type="button" value="Bill" id="Billamount" onclick="billamount()"
+                    style="background-color: blue; padding: 3px; width: 100px; color: white;">
+                <input type="button" value="Discount" id="billdiscount" onclick="billdis()"
+                    style="background-color: blue; padding: 3px; width: 100px; color: white;">
+                <input type="button" value="Net" onclick="billnet()"
+                    style="background-color: blue; padding: 3px; width: 100px; color: white;">
+            </div>
+
+            <br><br>
+
+
+            <div style="display: flex; justify-content: space-evenly;">
+                <div>
+                    AC BILL: <br>
+                    <input type="text" id="ACBill" class="inpt inpt2" readonly>
+                </div>
+                <div>
+                    Fan BILL: <br>
+                    <input type="text" id="Fanbill" class="inpt inpt2" readonly>
+                </div>
+                <div>
+                    Cooler BILL: <br>
+                    <input type="text" id="CoolerBill" class="inpt inpt2" readonly>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div style="display: flex; justify-content: space-evenly;">
+                <div>Units BILL: <br>
+                    <input type="text" id="unitbill" class="inpt inpt2" readonly>
+                </div>
+                <div>Total Bill: <br>
+                    <input type="text" id="totalbill" class="inpt inpt2" readonly>
+                </div>
+            </div>
+
+            <br><br>
+
+            <div style="display: flex; justify-content: space-evenly;">
+                <div>Discount: <br>
+                    <input type="text" name="" id="disc" class="inpt inpt2" readonly>
+                </div>
+                <div> Net Total: <br>
+                    <input type="text" name="" id="nettotall" class="inpt inpt2" readonly>
+                </div>
+            </div>
+        </div>
+    </center>
+</body>
+
+</html>

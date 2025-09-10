@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        body {
+            background-color: whitesmoke;
+            background-image: url(https://media2.giphy.com/media/6WjiPPOF0eeS3ipQKH/giphy.gif?cid=6c09b9529gmms5f3ma835xkxg5ktyotik6g3skr5tqk604z1&ep=v1_gifs_search&rid=giphy.gif&ct=g);
+            background-size: cover;
+        }
+
+        #welcome {
+            width: 60%;
+            margin-top: 18px;
+            border-radius: 10px;
+            height: 650px;
+            float: left;
+        }
+
+        #login {
+            background-image: url(https://i.makeagif.com/media/9-14-2021/3XxbIh.gif);
+            filter: drop-shadow(10px);
+            background-size: cover;
+            width: 40%;
+            border-radius: 10px;
+            height: 695px;
+            float: left;
+            box-shadow: -25px 0px 20px grey;
+        }
+
+        #frm {
+            width: 380px;
+            height: 460px;
+            margin: auto;
+            padding-top: 20px;
+            margin-top: 10%;
+            box-shadow: 0px 0px 10px 10px grey;
+            border-radius: 20px;
+        }
+
+        .details {
+            margin-top: 10%;
+            border: 0px red solid;
+        }
+
+        .txt {
+            background-color: antiquewhite;
+        }
+
+        input[type="email"],
+        input[type="password"],
+        input[type="number"] {
+            width: 85%;
+            margin-left: 6px;
+            line-height: 20px;
+            outline: none;
+            border: 1px gray solid;
+            text-align: center;
+            padding-top: 6px;
+            padding-bottom: 3px;
+            color: orange;
+            float: left;
+            border-radius: 20px;
+        }
+
+        input[type="email"]:focus {
+            border: 1px solid blue;
+        }
+
+        input[type="number"]:focus {
+            border: 1px solid blue;
+        }
+
+        #pass {
+            border: 1px grey solid;
+            height: 30px;
+            width: 96%;
+            margin-left: 6px;
+            float: left;
+            border-radius: 20px;
+        }
+
+        .wlcmtxt {
+            color: royalblue;
+            padding-left: 10%;
+            padding-top: 10%;
+            font-size: 70px;
+        }
+
+        #eye {
+            border: 0px black solid;
+            width: 10%;
+            height: inherit;
+            float: left;
+            padding: 1%;
+            padding-top: 6px;
+            text-align: center;
+        }
+
+        #eye:hover {
+            color: orange;
+        }
+
+        #image {
+            background-image: url(pics/user.png);
+            height: 40%;
+            background-size: contain;
+            width: 50%;
+            margin: auto;
+        }
+
+        .btn {
+            padding: 10px;
+            width: 50%;
+            margin-top: 10px;
+            margin-left: 20%;
+            border-radius: 15px;
+            border: 0px;
+            background-color: royalblue;
+            color: aliceblue;
+            font-size: large;
+            padding-bottom: 10px;
+            transition: ease all 1s;
+        }
+
+        .btn:hover {
+            background-color: orange;
+            color: black;
+        }
+
+        .btn:active {
+            transform: translate(5px, -5px);
+            transition: ease all 1s;
+        }
+
+        .lgnfrm {
+            font-size: 70px;
+            text-align: center;
+            font-weight: bold;
+            color: orange;
+            text-shadow: 10px 8px 10px grey;
+        }
+
+        /* For Type Writter Effect from here */
+        h1 {
+            white-space: nowrap;
+            overflow: hidden;
+            animation: typewriter 3s steps(25) infinite alternate,
+                blink 800ms steps(25) infinite normal;
+            border-right: 5px solid black;
+        }
+
+        @keyframes typewriter {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 70%;
+            }
+        }
+
+        @keyframes blink {
+            from {
+                border-color: royalblue;
+            }
+
+            to {
+                border-color: transparent;
+            }
+        }
+
+        /* To Here */
+
+        .txtEmail {
+            background-image: url(https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png);
+            height: 20px;
+            width: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding-left: 30px;
+        }
+
+        .txtNum {
+            background-image: url(https://static.vecteezy.com/system/resources/previews/029/816/474/non_2x/icons-business-card-contact-information-symbols-vector-illustration-isolated-on-transparent-background-free-png.png);
+            height: 20px;
+            width: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+            padding-left: 30px;
+        }
+
+        #cross {
+            height: 15px;
+            width: 15px;
+            background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_w7aDXJjY-4O9I8BVG8-UntEXwmcujOqmkg&s);
+            padding-right: 10px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="welcome">
+        <h1 class="wlcmtxt">Please login here....</h1>
+
+        <h2 class="wlcmtxt" style="color:orange; font-size: 20px;">Lorem ipsum dolor sit amet consectetur adipisicing
+            elit. Eum consequatur, aliquid adipisci architecto numquam reiciendis quos excepturi dolores dolorum dicta,
+            tenetur commodi ad incidunt, quis tempore. Tenetur sit facilis qui.</h2>
+    </div>
+    <div id="login">
+        <div class="lgnfrm">Login Form</div>
+        <div id="frm">
+
+            <div id="cross"></div>
+            <div id="image"></div>
+
+            <div class="details">
+                <label style="font-size: larger; color: royalblue; margin-left: 10px; font-weight: bold;" for="">Email
+                    ID</label>
+                <div class="txt">
+                    <input type="email" class="txtEmail" autofocus required>
+                </div>
+            </div>
+
+            <div class="details">
+                <label style="font-size: larger; color: royalblue; margin-left: 10px; font-weight: bold;" for="">Contact
+                    No.</label>
+                <div class="txt">
+                    <input type="number" class="txtNum" required>
+                </div>
+            </div>
+
+            <div class="details">
+                <div><label style="font-size: larger; color: royalblue; margin-left: 10px; font-weight: bold;"
+                        for="">Password</label></div>
+                <div id="pass">
+                    <div id="eye">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <input type="password" style="width: 85%;border:none;" required>
+                </div>
+            </div>
+
+            <div class="details">
+                <input class="btn" type="button" value="Login/Sign Up">
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>

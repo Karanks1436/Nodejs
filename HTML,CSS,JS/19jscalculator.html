@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function display(value) {
+            let values = document.getElementById('display').value += value;
+            return values;
+        }
+        function doclear() {
+            document.getElementById('display').value = "";
+        }
+
+        function doevaluation() {
+            let values = document.getElementById('display').value;
+            let total = eval(values);
+            document.getElementById('display').value = total;
+        }
+
+        function backspace() {
+            let values = document.getElementById('display');
+            let len=values.value.length;
+            
+            let sub=values.value.substr(0,len-1);
+
+            values.value=sub;
+        }
+    </script>
+    <style>
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 670px;
+        /* background-color: aliceblue; */
+        background-image: url(https://img.freepik.com/free-photo/back-school-decoration-with-pencils-calculator-space_23-2147662344.jpg);
+        background-size: cover;
+    }
+        .container {
+            width: 350px;
+            /* height: 800px; */
+            border: 3px orange solid;
+            box-shadow:0px 0px 10px 11px orange;
+            border-radius: 20px;
+            padding: 5px;
+            display: inherit;
+            justify-content: space-evenly;
+            background-color: transparent;
+        }
+
+        .btn {
+            height: 70px;
+            width: 70px;
+            margin-top: 10px;
+            border-radius: 100%;
+            background-color: grey;
+            color: white;
+            font-weight: bold;
+            font-size: larger;
+        }
+        .btnfn{
+            background-color: orange;
+            color: white;
+            font-size: 23px;
+        }
+        .btnfn2{
+            background-color: lightblue;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="container">
+
+            <h4 style="color: aliceblue;">BASIC CALCULATOR</h4>
+            <input type="text" id="display" style="padding: 20px; padding-left: 80px; font-size: large; font-weight: bold; color: aliceblue; background-color: transparent; border: 1px white solid;" disabled>
+
+
+            <button class="btn btnfn btnfn2" onclick="doclear()">AC</button>
+            <button class="btn btnfn btnfn2" onclick="backspace()">⌫</button>
+            <button class="btn btnfn btnfn2" onclick="display('%')">%</button>
+            <button class="btn btnfn" onclick="display('/')">÷</button>
+
+
+
+            <button class="btn" onclick="display('7')">7</button>
+            <button class="btn" onclick="display('8')">8</button>
+            <button class="btn" onclick="display('9')">9</button>
+            <button class="btn btnfn" onclick="display('*')">x</button>
+
+
+
+            <button class="btn" onclick="display('4')">4</button>
+            <button class="btn" onclick="display('5')">5</button>
+            <button class="btn" onclick="display('6')">6</button>
+            <button class="btn btnfn" onclick="display('-')">-</button>
+
+
+
+            <button class="btn" onclick="display('1')">1</button>
+            <button class="btn" onclick="display('2')">2</button>
+            <button class="btn" onclick="display('3')">3</button>
+            <button class="btn btnfn" onclick="display('+')">+</button>
+
+
+
+            <button class="btn" onclick="display(('('))">(</button>
+            <button class="btn" onclick="display(')')">)</button>
+            <button class="btn" onclick="display('.')">.</button>
+            <button class="btn" onclick="display('0')">0</button>
+            <button class="btn btnfn" style="width: 70%; font-size: 60px; border-radius: 10px;" onclick="doevaluation()">=</button>
+
+
+            </table>
+            <!-- </form> -->
+    </center>
+</body>
+
+</html>

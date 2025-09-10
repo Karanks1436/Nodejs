@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AngularJS Demo</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- AngularJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+  <script>
+    let module = angular.module("myModule", []);
+    module.controller("myController", function ($scope) {
+      $scope.fn = "Karan";
+      $scope.ln = "Kumar";
+      $scope.fullname = "";
+
+      $scope.doJoin = function () {
+        $scope.fullname = $scope.fn + " " + $scope.ln;
+      };
+
+      $scope.doClear = function () {
+        $scope.fn = "";
+        $scope.ln = "";
+        $scope.fullname = "";
+      };
+
+      $scope.months = ["January", "February", "March", "April"];
+
+      $scope.JsonAry = [
+        { emailid: "Karanksxxx@gmail.com", pwd: "Karan", mobile: "9041429065" },
+        { emailid: "Karank2s6266@gmail.com", pwd: "Karanks", mobile: "9045529065" },
+        { emailid: "Karankks1436@gmail.com", pwd: "Karan1436", mobile: "9049829065" },
+      ];
+
+      $scope.show = function (emailid, index) {
+        alert(
+          "Email: " + emailid +
+          " | Password: " + $scope.JsonAry[index].pwd +
+          " | Mobile: " + $scope.JsonAry[index].mobile
+        );
+      };
+    });
+  </script>
+</head>
+
+<body ng-app="myModule" ng-controller="myController" class="bg-light">
+  <div class="container py-5">
+    <div class="text-center">
+
+      <!-- Name Inputs -->
+      <div class="card shadow p-4 mb-5">
+        <h3 class="text-primary mb-3">Join Form</h3>
+        <div class="mb-3">
+          <label class="form-label">First Name:</label>
+          <input type="text" class="form-control d-inline-block w-auto" ng-model="fn">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Last Name:</label>
+          <input type="text" class="form-control d-inline-block w-auto" ng-model="ln">
+        </div>
+        <div class="mb-3">
+          <button class="btn btn-success me-2" ng-click="doJoin()">Join Now</button>
+          <button class="btn btn-danger" ng-click="doClear()">Clear</button>
+        </div>
+        <p class="fw-bold">Full Name: <span class="text-dark">{{fullname}}</span></p>
+      </div>
+
+      <!-- Dropdowns -->
+      <div class="card shadow p-4 mb-5">
+        <h4 class="text-primary mb-3">Select Month & Day</h4>
+        <div class="row g-3 justify-content-center">
+          <div class="col-md-4">
+            <select class="form-select">
+              <option value="none">Select</option>
+              <option ng-repeat="month in months" value="{{month}}">{{month}}</option>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <select class="form-select">
+              <option ng-repeat="n in [].constructor(31) track by $index" value="{{$index+1}}">
+                {{$index+1}}
+              </option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table -->
+      <div class="card shadow p-4">
+        <h4 class="text-primary mb-3">User Records</h4>
+        <table class="table table-bordered table-striped align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Sr. No.</th>
+              <th scope="col">Email ID</th>
+              <th scope="col">Password</th>
+              <th scope="col">Mobile</th>
+              <th scope="col">Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="obj in JsonAry">
+              <td>{{$index+1}}</td>
+              <td>{{obj.emailid}}</td>
+              <td>{{obj.pwd}}</td>
+              <td>{{obj.mobile}}</td>
+              <td class="text-center">
+                <button class="btn btn-sm btn-info" ng-click="show(obj.emailid,$index)">
+                  Details
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

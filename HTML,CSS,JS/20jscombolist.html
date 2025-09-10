@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function doShowSelected(branch)
+        {
+            alert(branch.value+" Selected Index="+ branch.selectedIndex );
+        }
+        function doShowJust(lst)
+        {
+           // alert(lst.value+" Selected Index="+ lst.selectedIndex );
+           let resp=confirm("R U sure?");//return bool:true/false
+           if(resp==true)
+            lst.remove(lst.selectedIndex);
+        }
+        function doShowSelected2(techs)
+        {
+            var all2="";
+            let i;
+           alert(techs.length)
+            for( i=0;i<techs.length;i++)
+                {
+                     
+                    if(techs[i].selected==true)
+                        {
+                            alert(techs[i].text+"  "+techs[i].value);   
+                            all2=all2+techs[i].text+",";
+                        }
+                        
+                }
+                alert(all2);
+        }
+    </script>
+</head>
+<body>
+        <center>
+            Select Branch:(Combo Box) <br>
+            <select id="branch" onchange="doShowSelected(this);">
+                <option value="none">select</option>
+                <option value="Computers">CSE</option>
+                <option value="Electronics">ECE</option>
+                <option value="CIVIL">Civil</option>
+            </select>
+            <hr><h2>List Box</h2>
+            Technologies U Know: <br>
+            <select id="techs" multiple  ondblclick="doShowJust(this)">
+                <option value="Real Java">Java</option>
+                <option value="MERN">ReactJS</option>
+                <option value="NJ">NextJs</option>
+                <option value="Mach. Lrn">ML</option>
+            </select>
+            <p>
+                <CENTER>
+                    <input type="button" value="Show Selected Items" onclick="doShowSelected2(techs);">
+                </CENTER>
+            </p>
+        </center>
+</body>
+</html>

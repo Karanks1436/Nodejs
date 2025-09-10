@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Document</title>
+    <style>
+        .btn {
+            background-color: lightskyblue;
+            float: left;
+            padding: 20px;
+            margin: 20px;
+            width: 150px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: larger;
+            transition: ease all .5s;
+            cursor: pointer;
+            box-shadow: 10px 10px 10px 10px grey;
+            border-radius: 20px 0px 20px 0px;
+        }
+
+        .btn-login {
+            background-color: orange;
+            color: aliceblue;
+        }
+
+        .btn:hover {
+            background-color: teal;
+            color: orange;
+            border: 1px black solid;
+            border-radius: 0px 20px 0px 20px;
+        }
+
+        /* .btn:active {
+            transform: translate(0px, 5px);
+            transition: ease all .5s;
+        } */
+
+        .btn:active{
+            transform: translate(0px,5px);
+            transition: ease-in-out all .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="btn">Sign up</div>
+    <div class="btn btn-login">Login</div>
+</body>
+
+</html>

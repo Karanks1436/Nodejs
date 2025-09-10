@@ -1,0 +1,70 @@
+body{
+    /* background-color: gainsboro; */
+}
+#side-div{
+    width: 250px;
+    height: 600px;
+    background-color: aliceblue;
+    float: left;
+    overflow-y: scroll;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+    /* height: 10px; */
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:blue;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+#content-div{
+    width: 600px;
+    height: 600px;
+    background-color: skyblue;
+    margin-left: 10px;
+    float: left;
+    font-size: medium;
+    padding: 10px;
+    font-family: cursive;
+}
+ol{
+    margin-top: 0px;
+    list-style: none;
+    padding-left: 0px;
+}
+li{
+    line-height: 50px;
+    text-align: center;
+    background-color: black;
+    color: chartreuse;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 0px 20px 20px 0px;
+    margin-bottom: 5px;
+}
+li:hover{
+    background-color: chartreuse;
+    color: black;
+    border-radius:60px;
+}
+li::before{
+    content: '☯ ';
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+        }
+        #outer-div{
+            height: 700px;
+            width: 100%;
+            margin-top: 100px;
+            background-color: rgb(255, 255, 255)
+        }
+        #inner-div{
+            height: 700px;
+            width: 50%;
+            float: left;            
+        }
+        .cardd{
+            width: 350px; height: 190px; background-color: white; 
+            margin-top: 10px;
+        }
+        #all{
+             height: inherit;
+            width: inherit; margin: auto;
+        }
+        #gt{
+            width: 100px;
+            float: left;
+            font-size: 70px;
+            color: blue;
+            cursor: pointer;
+            
+        }
+        #gt:hover{
+            transform: scale(1.2);
+            color: orange;
+        }
+        #cntnt{
+            width: 250px;
+            float: left;
+            cursor: pointer;
+        }
+        #cntnt:hover{
+            color: blue;
+           
+        }
+    </style>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"  />
+</head>
+<body>
+    <div id="outer-div">
+        <div id="inner-div">
+            <div id="all">
+            <div class="cardd">
+                <div id="gt"><i class="fa-solid fa-stethoscope"></i></div>
+                <div id="cntnt">
+                    <h2>General Treatment</h2>
+                    <p style="color: grey; margin-top: 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+                </div>
+            </div>
+          
+            <div class="cardd">
+                <div id="gt"><i class="fa-solid fa-heart-pulse"></i></div>
+                <div id="cntnt">
+                    <h2>Heart Surgery</h2>
+                    <p style="color: grey; margin-top: 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+                </div>
+            </div>
+            <div class="cardd cntr">
+                <div id="gt"><i class="fa-solid fa-eye-low-vision"></i></div>
+                <div id="cntnt">
+                    <h2>Vision Problems</h2>
+                    <p style="color: grey; margin-top: 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div id="inner-div">
+            <div id="all">
+                <div class="cardd cntr">
+                    <div id="gt"><i class="fa-solid fa-tooth"></i></div>
+                    <div id="cntnt">
+                        <h2>Teeth Whitening</h2>
+                        <p style="color: grey; margin-top: 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+                    </div>
+                </div>
+                <div class="cardd">
+                    <div id="gt"><i class="fa-solid fa-ear-listen"></i></div>
+                    <div id="cntnt">
+                        <h2>Ear Treatment</h2>
+                        <p style="color: grey; margin-top: 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+                    </div>
+                </div>
+                
+               
+                <div class="cardd">
+                    <div id="gt"><i class="fa-solid fa-droplet"></i></div>
+                    <div id="cntnt">
+                        <h2>Blood Transfusion</h2>
+                        <p style="color: grey; margin-top: 25px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus dictum eros ut imperdiet.</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</body>
+</html>

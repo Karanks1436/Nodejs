@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Records Management</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+  <!-- AngularJS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js"></script>
+
+  <script>
+    let mymodule = angular.module("myModuleKuch", []);
+    mymodule.controller("myControllerKuch", function ($scope, $http) {
+      $scope.jsonAry = [];
+
+      $scope.doFetchAll = function () {
+        let url = "/all-records";
+        $http.get(url).then(fxSuccess, fxFail);
+
+        function fxSuccess(response) {
+          $scope.jsonAry = response.data;
+        }
+        function fxFail(err) {
+          alert("Error: " + err.data);
+        }
+      };
+
+      $scope.doShowDetails = function (email, index) {
+        alert("Email: " + email + "\nIndex: " + index);
+      };
+
+      $scope.doDelete = function (email) {
+        if (!confirm("Are you sure you want to delete this record?")) return;
+
+        let url = "/do-delete-one?emailKuch=" + email;
+        $http.get(url).then(fxSuccess, fxFail);
+
+        function fxSuccess(response) {
+          alert(response.data);
+          $scope.doFetchAll();
+        }
+        function fxFail(err) {
+          alert("Error: " + err.data);
+        }
+      };
+    });
+  </script>
+</head>
+
+<body ng-app="myModuleKuch" ng-controller="myControllerKuch" ng-init="doFetchAll()" class="bg-light">
+  <div class="container py-5">
+
+    <div class="text-center mb-4">
+      <h2 class="text-primary">Records Management</h2>
+      <button class="btn btn-success mt-3" ng-click="doFetchAll()">
+        Refresh Records
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="card shadow p-3">
+      <h5 class="mb-3 text-center text-secondary">All Records</h5>
+      <div class="table-responsive">
+        <table class="table table-bordered table-striped align-middle text-center">
+          <thead class="table-dark">
+            <tr>
+              <th>Sr. No</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>Date of Birth</th>
+              <th>Picture</th>
+              <th>Operations</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="obj in jsonAry">
+              <td>{{$index+1}}</td>
+              <td>{{obj.email}}</td>
+              <td>{{obj.pwd}}</td>
+              <td>{{obj.dob}}</td>
+              <td>
+                <img ng-src="{{obj.picurl}}" class="img-thumbnail" width="100" height="100" alt="User Pic">
+              </td>
+              <td>
+                <button class="btn btn-info btn-sm me-2" ng-click="doShowDetails(obj.email,$index)">
+                  Details
+                </button>
+                <button class="btn btn-danger btn-sm" ng-click="doDelete(obj.email)">
+                  Delete
+                </button>
+              </td>
+            </tr>
+            <tr ng-if="jsonAry.length === 0">
+              <td colspan="6" class="text-muted">No records found.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

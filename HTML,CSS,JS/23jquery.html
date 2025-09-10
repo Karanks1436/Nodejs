@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () 
+        {
+            $("#btn").click(function () {
+                alert("Clicked")
+                $("#btn").unbind("mouseenter");
+                $("#btn").unbind("mouseleave");
+
+            })
+
+            //====================================================================
+            $("#btn").mouseenter(function(){
+                alert("Mouse entered")
+            }).mouseleave(function(){
+                alert("Mouse left")
+            })
+
+
+            //====================================================================
+
+            $("#btn2").bind("dblclick",function(){
+                alert("Double clicked")
+            })
+
+            $("#btn3").click(doclick);
+            function doclick(){
+                alert("Hello World")
+            }
+        })
+    </script>
+
+</head>
+
+<body>
+
+    <center>
+        <input type="button" id="btn" value="Click me">
+        <input type="button" id="btn2" value="Click me 2">
+        <input type="button" id="btn3" value="Click me 3">
+    </center>
+</body>
+
+</html>

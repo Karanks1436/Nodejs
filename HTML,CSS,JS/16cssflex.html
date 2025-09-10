@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+      *{
+        margin: 0px;
+      }
+.heading{
+    font-size: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    background-color: #09f;
+    /* height: 100px; */
+}
+        #main{
+            width: 100%;
+            height: 90vh;
+            /* background-color: black; */
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        #side{
+            /* background-color: powderblue; */
+            height: 250px;
+            width: 30%;
+            box-shadow: 0px 0px 10px 10px grey;
+            border-radius: 10px;
+        }
+        #upper{
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        
+        }
+        .logo{
+            /* background-image: url(https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg); */
+            height: 60px;
+            width: 60px;
+            background-size: contain;
+            padding: 15px;
+            border-radius: 100%;
+
+        }
+        #lower{
+            display: flex;
+            justify-content: center;
+            color: grey;
+        }
+        #title{
+            font-size: 18px;
+            margin-left: 10px;
+        }
+
+
+
+        .rating {
+  display: inline-block;
+  position: relative;
+  font-size: 20px;
+  margin-top: -5px;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 10%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color:rgb(235, 150, 37);
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color: orange;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px #09f;
+}
+    </style>
+</head>
+<body>
+  <div class="heading">Clients review</div>
+    <div id="main">
+        <div id="side">
+            <div id="upper">
+                <div class="logo">
+                    <!-- logo -->
+                     <img src="https://t3.ftcdn.net/jpg/02/43/12/34/360_F_243123463_zTooub557xEWABDLk0jJklDyLSGl2jrr.jpg" class="logo" alt="">
+                    <!-- <img src="https://www.free-css.com/assets/files/free-css-templates/preview/page296/listrace/assets/images/c2.png" alt=""> -->
+                </div>
+                <div id="title">
+                <h1>Tom Leaker </h1>
+                <p style="color: grey;">London,UK</p>
+                <!-- <input type="rating"> -->
+
+                <form class="rating">
+                    <label>
+                      <input type="radio" name="stars" value="1" />
+                      <span class="icon">★</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="2" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="3" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>   
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="4" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="5" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                    </label>
+                  </form>
+
+
+
+
+                </div>
+            </div>
+            <div id="lower">
+                <p style="width: 320px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quisquam rerum commodi dicta. Commodi expedita necessitatibus ipsam a? Dolor, cum.</p>
+            </div>
+        </div>
+        <div id="side">
+            <div id="upper">
+                <div class="logo">
+                    
+                    <img src="https://www.shutterstock.com/image-photo/cool-man-doing-number-one-260nw-337020443.jpg" class="logo" alt="">
+                </div>
+                <div id="title">
+                <h1>Shohrab Hossain </h1>
+                <p style="color: grey;">London,UK</p>
+                <!-- <input type="rating"> -->
+
+
+
+                <form class="rating">
+                    <label>
+                      <input type="radio" name="stars" value="1" />
+                      <span class="icon">★</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="2" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="3" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>   
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="4" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="5" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                    </label>
+                  </form>
+
+                </div>
+            </div>
+            <div id="lower">
+                <p style="width: 320px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quisquam rerum commodi dicta. Commodi expedita necessitatibus ipsam a? Dolor, cum.</p>
+            </div>
+        </div>
+        <div id="side">
+            <div id="upper">
+                <div class="logo">
+                    
+                    <img src="https://cdn.pixabay.com/photo/2014/09/17/11/47/man-449406_640.jpg" class="logo" alt="">
+                </div>
+                <div id="title">
+                <h1>Monirol Islam</h1>
+                <p style="color: grey;">London,UK</p>
+                <!-- <input type="rating"> -->
+
+
+                <form class="rating">
+                    <label>
+                      <input type="radio" name="stars" value="1" />
+                      <span class="icon">★</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="2" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="3" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>   
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="4" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                    </label>
+                    <label>
+                      <input type="radio" name="stars" value="5" />
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                      <span class="icon">★</span>
+                    </label>
+                  </form>
+
+                </div>
+            </div>
+            <div id="lower">
+                <p style="width: 320px;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa quisquam rerum commodi dicta. Commodi expedita necessitatibus ipsam a? Dolor, cum.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

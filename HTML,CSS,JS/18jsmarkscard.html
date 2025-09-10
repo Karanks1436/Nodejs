@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function dofirst(){
+            
+            document.querySelector("#btnper").disabled=true;
+            document.querySelector("#btnres").disabled=true;
+        }
+
+        function dototal() {
+            let valc = document.querySelector("#numc").value;
+            let valdsa = document.querySelector("#numdsa").value;
+            let valwd = document.querySelector("#numwd").value;
+
+            let total = parseInt(valc) + parseInt(valdsa) + parseFloat(valwd);
+            document.querySelector("#numtotal").value = total.toFixed(2);
+            document.querySelector("#btnper").disabled=false;
+            // return(total);
+
+        }
+
+        function doper() {
+            let valc = document.querySelector("#numc").value;
+            let valdsa = document.querySelector("#numdsa").value;
+            let valwd = document.querySelector("#numwd").value;
+
+            let total = parseInt(valc) + parseInt(valdsa) + parseFloat(valwd);
+            let per = total / 300 * 100;
+            document.querySelector("#numper").value = per.toFixed(5);
+            document.querySelector("#btnres").disabled=false;
+            // alert(per);
+
+        }
+
+        function doresult() {
+            let valc = document.querySelector("#numc").value;
+            let valdsa = document.querySelector("#numdsa").value;
+            let valwd = document.querySelector("#numwd").value;
+
+            let total = parseInt(valc) + parseInt(valdsa) + parseFloat(valwd);
+            let per = total / 300 * 100;
+
+            // let res=document.querySelector()
+
+            if (per >= 45)
+                document.querySelector("#numres").value = ("Pass");
+
+            // alert("pass");
+            else
+                document.querySelector("#numres").value = "Fail";
+        }
+
+        function docheckC() {
+            let ptrC = document.querySelector("#numc");
+            let valc = ptrC.value;
+           
+
+            if (valc == "") {
+                // alert("Please fill all fields");  
+                document.querySelector("#errorC").innerHTML="<b>Please Fill the Value</b>"
+                ptrC.style.backgroundColor="red";  
+                return;
+            }
+            if(isNaN(valc)==true){
+                // alert("Invalid marks for c");
+                 document.querySelector("#errorC").innerHTML="<b>Please Fill the Numeric  Value</b>"
+                ptrC.style.backgroundColor="red";
+                return;
+            }
+            if(valc>100)
+            {
+                // alert("Enter marks between 0-100");
+                document.querySelector("#errorC").innerHTML="<b>Please Fill the Data bEtween (0-100)</b>"
+                ptrC.style.backgroundColor="red";
+                return;
+            }
+
+            ptrC.style.backgroundColor="lightgreen";
+            document.querySelector("#errorC").innerHTML="<b>Good To GO......</b>";
+        }
+        function docheckDSA() {
+           
+            let ptrDSA = document.querySelector("#numdsa");
+            let valdsa = ptrDSA.value;
+           
+
+            if (valdsa == "" ) {
+                // alert("Please fill all fields");  
+                document.querySelector("#errordsa").innerHTML="<b>Please Fill the Value</b>"  
+                ptrDSA.style.backgroundColor="red";
+                return;
+            }
+            if(isNaN(valdsa)==true){
+                // alert("Invalid marks for c");
+                document.querySelector("#errorDsa").innerHTML="<b>Please Fill the Numeric  Value</b>"
+                ptrDSA.style.backgroundColor="red";
+                return;
+            }
+            if(valdsa>100)
+            {
+                // alert("Enter marks between 0-100");
+                document.querySelector("#errorDsa").innerHTML="<b>Please Fill the Data bEtween (0-100)</b>"
+                ptrDSA.style.backgroundColor="red";
+                return;
+            }
+            ptrDSA.style.backgroundColor="lightgreen";
+            document.querySelector("#errorDsa").innerHTML="<b>Good To GO......</b>";
+        }
+        function docheckWD() {
+           
+            let ptrWD = document.querySelector("#numwd");
+            let valwd = ptrWD.value;
+
+            if (valwd == "") {
+                // alert("Please fill all fields");   
+                 document.querySelector("#errorWD").innerHTML="<b>Please Fill the Value</b>"
+                ptrWD.style.backgroundColor="red"; 
+                return;
+            }
+            if(isNaN(valwd)==true){
+                // alert("Invalid marks for c");
+                document.querySelector("#errorWD").innerHTML="<b>Please Fill the Numeric  Value</b>"
+                ptrWD.style.backgroundColor="red"; 
+                return;
+            }
+            if(valwd>100)
+            {
+                // alert("Enter marks between 0-100");
+                document.querySelector("#errorWD").innerHTML="<b>Please Fill the Data bEtween (0-100)</b>"
+                ptrWD.style.backgroundColor="red"; 
+                return;
+            }
+            ptrWD.style.backgroundColor="lightgreen";
+            document.querySelector("#errorWD").innerHTML="<b>Good To GO......</b>";
+        }
+    </script>
+    <style>
+        body {
+            /* background-color: black; */
+            background-image: url(https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-winter-holiday-results-improve-class-hand-drawn-cartoon-background-image_186781.jpg);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 600px;
+        }
+
+        .inpt {
+
+            height: 20px;
+            border-color: blue;
+        }
+
+        .res {
+            /* background-color: red; */
+            color: blue;
+            border-color: orangered;
+            height: 20px;
+            font-size: large;
+        }
+
+        #tbl {
+            padding: 10px;
+            background-color: white;
+            height: 300px;
+            width: 100%;
+            box-shadow: 0px 0px 10px 10px grey;
+        }
+
+        .heading {
+            color: blue;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .headingres {
+            color: orangered;
+            font-weight: bold;
+            font-size: x-large;
+        }
+
+        .btn {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border-radius: 0px 10px;
+        }
+    </style>
+</head>
+
+<body onload="dofirst()">
+    <center>
+        <h1 style="font-size: 80px; color: orange; text-shadow: 10px 1px grey;">Check Your result Here</h1>
+        <form>
+            <table id="tbl">
+                <tr>
+                    <td class="heading">Marks in C/C++: </td>
+                    <td>
+                        <input type="number" id="numc" class="inpt" onblur="docheckC()" autofocus>
+                    </td>
+                    <td>
+                        <div id="errorC">*</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="heading">Marks in DSA: </td>
+                    <td>
+                        <input type="number" id="numdsa" class="inpt" onblur="docheckDSA()">
+                    </td>
+                    <td>
+                        <div id="errorDsa">*</div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="heading">Marks in Web Development: </td>
+                    <td>
+                        <input type="number" id="numwd" class="inpt" onblur="docheckWD()">
+                    </td>
+                    <td>
+                        <div id="errorWD">*</div>
+                    </td>
+                </tr>
+
+
+
+                <tr>
+                    <th>
+                        <input type="button" class="btn" value="Total" onclick="dototal();">
+                        <input type="button" id="btnper" class="btn" value="Percentage" onclick="doper();">
+                        <input type="button" id="btnres" class="btn" value="Result" onclick="doresult();">
+                        <input type="reset"  class="btn" value="Reset">
+                    </th>
+                </tr>
+
+                <tr>
+                    <td class="headingres">Total: </td>
+                    <td>
+                        <input type="number" id="numtotal" class="res" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="headingres">Percentage: </td>
+                    <td>
+                        <input type="number" id="numper" class="res" readonly>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="headingres">Result: </td>
+                    <td>
+                        <input type="text" id="numres" class="res" readonly>
+                    </td>
+                </tr>
+
+
+            </table>
+        </form>
+    </center>
+</body>
+
+</html>

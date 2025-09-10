@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function doShowRad(radCse, radEce, radRes) {
+            if (radCse.checked == true)
+                radRes.innerHTML = radCse.value;
+            else
+                radRes.innerHTML = radEce.value;
+        }
+        function doRadShow(ref) {
+            alert(ref.value);
+        }
+        function doTotal(chkCpp, chkJava, chkNode, resChk) {
+            let sum = 0;
+            let tech = "";
+            if (chkCpp.checked == true) {
+                sum = sum + parseInt(chkCpp.value);
+                tech = tech + "C++,";
+            }
+
+
+            if (chkJava.checked == true) {
+                sum = sum + parseInt(chkJava.value);
+                tech = tech + "Java,";
+            }
+
+            if (chkNode.checked == true) {
+                sum = sum + parseInt(chkNode.value);
+                tech = tech + "NodeJS";
+            }
+
+            resChk.innerHTML = sum;
+            resChk2.innerHTML = tech;
+
+        }
+        function doCheckAll(chkAll, chkCpp, chkJava, chkNode) {
+            /*if(chkAll.checked==true)
+                chkCpp.checked=true;
+            else
+                chkCpp.checked=false;
+            */
+            let chkBool = chkAll.checked;
+            chkCpp.checked = chkBool;
+            chkJava.checked = chkBool;
+            chkNode.checked = chkBool;
+
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <p>
+            Ur Branch: <input type="radio" value="Computer Science" name="brn" id="radCse" checked>CSE
+            <input type="radio" value="Electronics" name="brn" id="radEce">ECE
+        <p>
+            <input type="button" value="Show Selected Branch" onclick="doShowRad(radCse,radEce,radRes);">
+            <br> <br>
+            <span id="radRes">*</span>
+        </p>
+        <hr>
+
+        Ur Branch:
+        <input type="radio" value="Computer Science" name="brn1" id="radCse1" checked onclick="doRadShow(this);">CSE
+        <input type="radio" value="Electronics" name="brn1" id="radEce1" onclick="doRadShow(this);">ECE
+        </p>
+        <hr>
+        <hr>
+        <p>
+            Select Traing Tecnologies:
+        <p>
+            <input type="checkbox" id="chkAll" onclick="doCheckAll(chkAll,chkCpp,chkJava,chkNode);"> Select All
+        </p>
+        <p>
+            <input type="checkbox" value="7600" id="chkCpp">C/C++
+            <input type="checkbox" value="8500" id="chkJava">Java
+            <input type="checkbox" value="8800" id="chkNode">NodeJs Web Dev
+
+        </p>
+        <p>
+            <input type="button" value="Get Total Fee" onclick="doTotal(chkCpp,chkJava,chkNode,resChk,resChk2);">
+        </p>
+        <p>
+            Total Fee: <span id="resChk">*</span>
+        </p>
+        <p>
+            Selected Technologies: <span id="resChk2">*</span>
+        </p>
+        </p>
+
+
+    </center>
+</body>
+
+</html>
