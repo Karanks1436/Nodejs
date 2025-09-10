@@ -13,7 +13,7 @@ var mysql2= require("mysql2");
 
 
     // connecting to db
-    let dbconfig= "mysql://avnadmin:AVNS__SxktxwBy87P99ml2Hu@mysql-bce-karanksxxx-a6bb.i.aivencloud.com:10904/defaultdb";
+    let dbconfig= "database id";
 
     let mysqlserver= mysql2.createConnection(dbconfig);
 
@@ -220,8 +220,8 @@ app.post("/sendemail",function(req,resp){
     const transporter = nodemailer.createTransport({  
         service: 'gmail',  
         auth: {  
-            user: 'karanksxxx@gmail.com',  
-            pass: 'vqla xjtv arnf ulpf' // Consider using app-specific passwords or OAuth2 for security  
+            user: 'gmailid',  
+            pass: 'password' // Consider using app-specific passwords or OAuth2 for security  
         }  
 }); 
 
@@ -247,9 +247,9 @@ transporter.sendMail(mailOptions, function(error, info){
 
     
 cloudinary.config({ 
-    cloud_name: 'dbvdxepqe', 
-    api_key: '116987294548589', 
-    api_secret: 'SQ3xj_ETHnyn8n8A6x2aOWW3CeE' // Click 'View API Keys' above to copy your API secret
+    cloud_name: 'cloudname', 
+    api_key: 'apikey', 
+    api_secret: 'apisecret' // Click 'View API Keys' above to copy your API secret
 });
 
 app.get("/cloudinary-process",function(req,resp){
